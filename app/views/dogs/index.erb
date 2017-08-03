@@ -1,0 +1,11 @@
+<h1>Dogs are awesome</h1>
+
+<% if Dog.count.zero? %>
+  <p>No puppers found. Add some!</p>
+<% end %>
+
+<ol>
+  <% Dog.all.each do |dog| %>
+    <li><%= dog.name %>, a <%= dog.breed %>, is a good dog!</li>
+  <% end %>
+</ol>
