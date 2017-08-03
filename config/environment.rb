@@ -41,5 +41,9 @@ end
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
+# Include ApplicationRecord. This ports over the semantics seen in Rails 5 and
+# accustoms students to inheriting from ApplicationRecord.
+Dir[APP_ROOT.join('app', 'models', 'application_record')].each { |file| require file }
+
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
