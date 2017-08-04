@@ -45,5 +45,5 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # accustoms students to inheriting from ApplicationRecord.
 require APP_ROOT.join('app', 'models', 'application_record').to_s
 
-# Set up the database and models
+# Set up the database
 require APP_ROOT.join('config', 'database')
