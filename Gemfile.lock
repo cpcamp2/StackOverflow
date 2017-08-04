@@ -85,8 +85,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (~> 5.0)
-  activesupport (~> 5.0)
+  activerecord (~> 5.1.0)
+  activesupport (~> 5.1.0)
   capybara
   factory_girl
   faker
