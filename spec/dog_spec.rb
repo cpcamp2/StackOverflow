@@ -1,8 +1,14 @@
 require 'spec_helper'
 
 describe Dog do
-  it "has a breed" do
-    d = Dog.create breed: "test", name: "Testy"
-    expect(d.name).to eq("Testy")
+  let(:dog) { Dog.create(breed: "Labradoodle", name: "Inara") }
+
+  it "has a readable breed" do
+    expect(dog.breed).to eq "Labradoodle"
+  end
+
+  it "has a readable name" do
+    expect(dog.name).to eq "Inara"
   end
 end
+
