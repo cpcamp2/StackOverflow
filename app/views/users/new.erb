@@ -1,0 +1,14 @@
+<h2>Create an Account</h2>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+    <% end %>
+  <% end %>
+
+<form id="new_user_form" method="post" action="/users">
+  <input type="text" name="user[email]" placeholder="email" />
+  <input type="text" name="user[username]" placeholder="username" />
+  <input type="password" name="user[password]" placeholder="password" />
+  <input type="submit" value="Submit" />
+</form>
