@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :questions, foreign_key: :author_id
+  has_many :answers, foreign_key: :author_id
+  has_many :comments, foreign_key: :commenter_id
+  has_many :votes, foreign_key: :voter_id
 	validates :username, :email, presence: true, uniqueness: true
 
   def password
@@ -13,10 +17,9 @@ class User < ApplicationRecord
   def self.authenticate(email, plaintext_password)
     user = User.find_by(username: username)
     if user && user.password == plaintext_password
-      retuen user
+      return user
     else
       nil 
     end 
   end
 end
-

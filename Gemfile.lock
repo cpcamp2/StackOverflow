@@ -110,6 +110,3 @@ DEPENDENCIES
   shoulda-matchers
   sinatra (~> 1.0)
   sinatra-contrib
-
-BUNDLED WITH
-   1.15.4
