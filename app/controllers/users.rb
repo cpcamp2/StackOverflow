@@ -17,6 +17,7 @@ end
 get '/users/:id' do
   if current_user
     status 200
+    @questions = Question.all
     erb :'users/show'
   else
     status 422

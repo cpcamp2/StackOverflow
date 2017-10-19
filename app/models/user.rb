@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :votes, as: :votable
   
   has_secure_password
+
 end
