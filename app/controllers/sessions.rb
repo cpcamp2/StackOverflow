@@ -7,7 +7,7 @@ post '/sessions' do
   if user
     status 200
     session[:user_id] = user.id
-    redirect '/suggestions'
+    redirect '/'
   else
     status 422
     @errors = ["Yeah, that's gonna be a no for me, dawg"]
