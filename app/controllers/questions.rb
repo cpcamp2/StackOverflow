@@ -1,3 +1,8 @@
+get '/questions' do
+  @questions = Question.all
+  erb :'/questions/index'
+end
+
 post '/questions' do
   @question = Question.new(content: params[:content],
                user_id: current_user.id)
