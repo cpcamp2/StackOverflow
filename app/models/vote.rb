@@ -1,5 +1,6 @@
 class Vote < ApplicationRecord
-  belongs_to :voter, class_name: "User"
-  belongs_to :voteable, polymorphic: true
-  # Remember to create a migration!
+  validates :vote, presence: true
+
+  belongs_to :user
+  belongs_to :votable, polymorphic: true
 end
