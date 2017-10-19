@@ -3,8 +3,8 @@ get '/users/new' do
 end
 
 post '/users' do
-  user = User.new(params[:user])
-  if user.save
+  @user = User.new(params[:user])
+  if @user.save
     status 200
     redirect '/sessions/new'
   else
