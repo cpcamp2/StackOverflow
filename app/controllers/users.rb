@@ -15,9 +15,12 @@ post '/users' do
 end
 
 get '/users/:id' do
+  @question = Question.find_by(id: params[:id])
+  @answers = Answer.all
   if current_user
     status 200
     @questions = Question.all
+
     erb :'users/show'
   else
     status 422

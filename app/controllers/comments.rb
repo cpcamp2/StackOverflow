@@ -1,6 +1,5 @@
 post '/comments' do
-  @comment = Comment.new(content: params[:content],
-               user_id: current_user.id, commentable_id: params[:thing_id], commentable_type: params[:commentable_type])
+  @comment = Comment.new(params[:comment])
   if @comment.save
     redirect "/question/#{params[:question_id]}"
   else
