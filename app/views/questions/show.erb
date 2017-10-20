@@ -3,3 +3,10 @@
   <p><%= @question.content %></p>
   <span class="author">- <%=@question.user.username%></span>
 </div>
+
+<% if @question.user_id == current_user.id %>
+  <form id="delete-form" method= "post" action="/questions/<%=@question.id%>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type = "submit" value = "delete">
+    </form>
+<% end %>
