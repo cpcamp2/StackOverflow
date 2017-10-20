@@ -7,7 +7,26 @@ def user_args
 	password_digest: Faker::Lorem.word}
 end
 
+def question_args
+  { title: Faker::Lorem.sentence + "?",
+    content: Faker::ChuckNorris.fact,
+    user_id: User.all.sample.id }
+end
+
+def answer_args
+  { content: Faker::Lorem.paragraph,
+    user_id: User.all.sample.id,
+    question_id: Question.all.sample.id }
+end
 
 30.times do
   User.find_or_create_by(user_args)
+end
+
+10.times do
+  Question.create(question_args) 
+end
+
+10.times do
+  Answers.create(answer_args)
 end
