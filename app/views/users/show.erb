@@ -1,12 +1,16 @@
 <h1><%= current_user.username %>'s Profile</h1>
 
+<<<<<<< HEAD
 <%= erb :'questions/_new_question' %>
 <%= erb :'questions/_answer' %>
+=======
+<%= erb :'questions/_new_question'%>
+>>>>>>> master
 
   <div class='question-container'>
     <% @questions.each do |question| %>
 
-      <h2><a href='/question/<%= question.id %>'><%= question.content%></a></h2>
+      <h2><a href='/question/<%= question.id %>'><%= question.title%></a></h2>
 
       <span class='author'>By: <%= question.user.username %></span>
       <br>

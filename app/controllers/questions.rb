@@ -7,8 +7,7 @@ end
 post '/questions' do
   @answers = Answer.all
   @questions = Question.all
-  @question = Question.new(content: params[:content],
-               user_id: current_user.id)
+  @question = Question.new(params[:question])
   if @question.save
     redirect "/users/#{current_user.id}"
   else
@@ -25,6 +24,6 @@ end
 
 get '/question/:id' do
   @question = Question.find_by(id: params[:id])
-  @answers = @question.answers
+  # @answers = @question.answers
   erb :'questions/show'
 end
