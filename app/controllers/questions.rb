@@ -5,6 +5,8 @@ get '/questions' do
 end
 
 post '/questions' do
+  @answers = Answer.all
+  @questions = Question.all
   @question = Question.new(content: params[:content],
                user_id: current_user.id)
   if @question.save
