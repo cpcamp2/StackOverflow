@@ -1,5 +1,6 @@
 User.delete_all
 Question.delete_all
+Answer.delete_all
 
 def user_args
 	{username: Faker::LordOfTheRings.character,
@@ -24,9 +25,9 @@ end
 end
 
 10.times do
-  Question.create(question_args) 
+  Question.create!(question_args) 
 end
 
 10.times do
-  Answers.create(answer_args)
+  Answer.create!(answer_args)
 end
