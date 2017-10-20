@@ -1,4 +1,8 @@
 <form id="new-question" method="post" action="/questions">
+  <input type="hidden" name="question[<%= current_user.id %>]">
+
+  <input type="text" id="question-title" name="question[title]" placeholder="Title">
+  
   <input type="text" id="question-content" name="question[content]" placeholder="What's your question?">
   <input type="submit" value="Ask">
 </form>
