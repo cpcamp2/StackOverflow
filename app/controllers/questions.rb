@@ -24,6 +24,6 @@ end
 
 get '/question/:id' do
   @question = Question.find_by(id: params[:id])
-  # @answers = @question.answers
+  @answers = @question.answers
   erb :'questions/show'
 end

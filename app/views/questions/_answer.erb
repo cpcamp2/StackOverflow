@@ -8,7 +8,7 @@
 <!-- Display all answers -->
 <ul>
   <% @answers.each do |answer| %>
-  <li><%=answer.answer_text%></li>
+  <li><%=answer.content%></li>
     <% if answer.user_id == current_user.id %>
       <form action ="/answers/<%=answer.id%>" method="post" id="delete">
         <input type="hidden" name="_method" value="Delete">
