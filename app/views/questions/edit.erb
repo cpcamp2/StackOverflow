@@ -1,0 +1,8 @@
+<h3>Update Your Question</h3>
+
+<form action='/question/<%= @question.id %>' method='post'>
+  <input type="hidden" name="_method" value="patch" />
+  <input id="title_input" name="question[title]" type="text" value="<%= @question.title %>" />
+  <input id="content_input" name="question[content]" type="text" value="<%= @question.content %>" />
+  <input name="commit" type="submit" value="update question" />
+</form>
