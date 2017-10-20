@@ -4,6 +4,6 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :commentable, polymorphic: true
 
-  has_many :votes, as: :voteable, dependent: :destroy
-  
+  has_many :votes, as: :votable, dependent: :destroy
+
 end

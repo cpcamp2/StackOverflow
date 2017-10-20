@@ -1,6 +1,6 @@
 <h1>Answers:</h1>
 <form id="answer" method="post" action="/answers">
-  <input type="text" id="answer_text" name="answer[text]" placeholder="Enter Answer">
+  <input type="text" id="answer_text" name="answer[content]" placeholder="Enter Answer">
   <input type="hidden" name="question_id" value="<%=params[:id]%>">
   <input type="Submit" value="Submit New Answer">
 </form>
@@ -9,10 +9,11 @@
 <ul>
   <% @answers.each do |answer| %>
   <li><%=answer.answer_text%></li>
-  <% if answer.user_id == current_user.id %>
-    <form action ="/answers/<%=answer.id%>" method="post" id="delete">
-      <input type="hidden" name="_method" value="Delete">
-      <input type="hidden" name="question_id" value="<%=params[:id]%>">
-      <input type="Submit" value="Delete">
-    </form>
+    <% if answer.user_id == current_user.id %>
+      <form action ="/answers/<%=answer.id%>" method="post" id="delete">
+        <input type="hidden" name="_method" value="Delete">
+        <input type="hidden" name="question_id" value="<%=params[:id]%>">
+        <input type="Submit" value="Delete">
+      </form>
+    <%end%>
   <%end%>

@@ -1,4 +1,4 @@
-class Answers < ApplicationRecord
+class Answer < ApplicationRecord
   validates :content, presence: true
 
   belongs_to :user
@@ -6,5 +6,5 @@ class Answers < ApplicationRecord
 
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :votes, as: :votable, dependent: :destroy
-  
+
 end

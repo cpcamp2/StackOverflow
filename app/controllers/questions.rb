@@ -1,5 +1,6 @@
 get '/questions' do
   @questions = Question.all
+  @question = Question.find_by(id: params[:id])
   erb :'/questions/index'
 end
 
