@@ -3,11 +3,13 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  user = User.authenticate(params[:user][:username], params[:user][:password])
-  if user
+  # binding.pry
+  @user = User.find_by(username: params[:username])
+  if @user && @user.authenticate(params[:password])
     status 200
     session[:user_id] = user.id
     redirect '/'
+
   else
     status 422
     @errors = ["Yeah, that's gonna be a no for me, dawg"]
