@@ -1,0 +1,15 @@
+<h5>Add a comment</h5>
+<form id="comment" method="post" action="/comments">
+  <input type="text" id="comment_text" name="comment[content]" placeholder="Enter comment">
+  <input type="hidden" name="question_id" value="<%= params[:id]%>">
+  <input type="hidden" name="commentable_type" value="Question">
+  <input type="hidden" name="" value= "<%= params[:id]%>">
+  <input type="Submit" value="Submit New Comment">
+</form>
+
+<!-- Display all comments -->
+<ul>
+  <% @question.comments.each do |comment| %>
+  <li><%=comment.comment_text %></li>
+  <%end%>
+</ul>

@@ -1,10 +1,12 @@
 get '/questions' do
   @questions = Question.all
+  @question = Question.find_by(id: params[:id])
   erb :'/questions/index'
 end
 
 post '/questions' do
-  puts params
+  @answers = Answer.all
+  @questions = Question.all
   @question = Question.new(params[:question])
   if @question.save
     redirect "/users/#{current_user.id}"
@@ -16,7 +18,7 @@ end
 
 get '/question/:id' do
   @question = Question.find_by(id: params[:id])
-  # @answers = @question.answers
+  @answers = @question.answers
   erb :'questions/show'
 end
 

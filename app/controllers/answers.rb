@@ -1,6 +1,6 @@
 post '/answers' do
-  @answer = Answer.new(content: params[:content],
-               user_id: current_user.id, question_id: params[:question_id])
+  current_user
+  @answer = Answer.new(params[:answer])
   if @answer.save
     redirect "/question/#{params[:question_id]}"
   else
