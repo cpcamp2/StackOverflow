@@ -4,13 +4,15 @@ get '/questions' do
 end
 
 post '/questions' do
+  # current_user
+  # binding.pry
   @question = Question.new(content: params[:content],
                user_id: current_user.id)
   puts params
   if @question.save
     redirect "/users/#{current_user.id}"
   else
-    binding.pry
+    # binding.pry
     @errors = "Nope, try again."
     erb :"/users/show"
   end
