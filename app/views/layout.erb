@@ -15,15 +15,15 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Sinatra Overflow</title>
 </head>
 <body>
 <nav>
   <% if logged_in? %>
-    <a href="/users/<%= current_user.id %>">Profile Page</a>
+    <a href="/users/<%= current_user.id %>">Profile Page</a><br>
     <a href="/sessions/logout">Logout</a>
   <% else %>  
-    <a href="/users/new">Register</a>
+    <a href="/users/new">Register</a><br>
     <a href="/sessions/new">Login</a>
   <% end %>
 </nav>
